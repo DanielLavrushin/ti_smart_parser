@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Smart.Parser": {
+      "commandName": "Project",
+      "commandLineArgs": "-i C:\\projects\\ti_smart_parser\\docs -o C:\\projects\\ti_smart_parser\\docs",
+      "workingDirectory": "C:\\projects\\ti_smart_parser\\docs"
+    },
+    "Container (Dockerfile)": {
+      "commandName": "Docker",
+      "commandLineArgs": "-i C:\\projects\\ti_smart_parser\\docs -o C:\\projects\\ti_smart_parser\\docs"
+    }
+  }
+}

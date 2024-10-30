@@ -1,8 +1,0 @@
-{
-    "sites": [
-        {
-        "name": "",
-        "morda_url": "http://minvostokrazvitia.ru"
-        }
-    ]
-}

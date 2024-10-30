@@ -1,7 +1,0 @@
-{
-    "sites": [
-        {
-            "morda_url": "http://ksl.spb.sudrf.ru"
-        }
-    ]
-}

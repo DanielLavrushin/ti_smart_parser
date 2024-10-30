@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <SmartParserPluginsDir>$(MSBuildProjectDirectory)\..\..\Smart.Parser\bin\Debug\net8.0\plugins\</SmartParserPluginsDir>
+    <OutDir>$(SmartParserPluginsDir)$(MSBuildProjectName)</OutDir>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PDFsharp" Version="6.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Using Include="Smart.Parser.Core" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Smart.Parser.Core\Smart.Parser.Core.csproj" />
+  </ItemGroup>
+
+</Project>

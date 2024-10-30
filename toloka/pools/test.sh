@@ -1,1 +1,0 @@
-python ../..//tools/DeclMatch/decl_match.py --toloka  test_pool.tsv --dump-conflicts conflicts.html 
