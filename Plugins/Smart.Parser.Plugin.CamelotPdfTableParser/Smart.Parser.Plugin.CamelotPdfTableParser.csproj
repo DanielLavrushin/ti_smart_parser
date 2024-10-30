@@ -9,14 +9,28 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="PDFsharp" Version="6.1.1" />
-  </ItemGroup>
-  <ItemGroup>
     <Using Include="Smart.Parser.Core" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="docs\**" />
+    <Compile Remove="__pycache__\**" />
+    <EmbeddedResource Remove="docs\**" />
+    <EmbeddedResource Remove="__pycache__\**" />
+    <None Remove="docs\**" />
+    <None Remove="__pycache__\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Smart.Parser.Core\Smart.Parser.Core.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <None Update="pdf2json.py">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

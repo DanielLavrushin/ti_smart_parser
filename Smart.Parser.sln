@@ -7,14 +7,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Parser.Core", "Smart.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Parser", "Smart.Parser\Smart.Parser.csproj", "{C4A41F53-EC2F-414E-8D61-F43A0804306B}"
 	ProjectSection(ProjectDependencies) = postProject
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5} = {073E4C18-BBFB-4DCF-A793-FDF6C70078B5}
+		{51A38732-38AF-4B11-BD28-E43272AC6180} = {51A38732-38AF-4B11-BD28-E43272AC6180}
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Plugins", "Plugins", "{B81D337C-BFC8-4F39-8B8B-77F6417CD148}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Parser.Common", "Smart.Parser.Common\Smart.Parser.Common.csproj", "{5A8EBC17-CA9B-4D71-B722-419CCF96AD0F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Parser.Plugin.TabulaPdfParser", "Plugins\Smart.Parser.Plugin.TabulaPdfParser\Smart.Parser.Plugin.TabulaPdfParser.csproj", "{073E4C18-BBFB-4DCF-A793-FDF6C70078B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smart.Parser.Plugin.CamelotPdfTableParser", "Plugins\Smart.Parser.Plugin.CamelotPdfTableParser\Smart.Parser.Plugin.CamelotPdfTableParser.csproj", "{51A38732-38AF-4B11-BD28-E43272AC6180}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,16 +34,16 @@ Global
 		{5A8EBC17-CA9B-4D71-B722-419CCF96AD0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A8EBC17-CA9B-4D71-B722-419CCF96AD0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A8EBC17-CA9B-4D71-B722-419CCF96AD0F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51A38732-38AF-4B11-BD28-E43272AC6180}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51A38732-38AF-4B11-BD28-E43272AC6180}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51A38732-38AF-4B11-BD28-E43272AC6180}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51A38732-38AF-4B11-BD28-E43272AC6180}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{073E4C18-BBFB-4DCF-A793-FDF6C70078B5} = {B81D337C-BFC8-4F39-8B8B-77F6417CD148}
+		{51A38732-38AF-4B11-BD28-E43272AC6180} = {B81D337C-BFC8-4F39-8B8B-77F6417CD148}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1A4515F6-E038-4D21-B2E5-55ABB0513781}

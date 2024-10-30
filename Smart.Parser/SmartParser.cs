@@ -20,15 +20,30 @@ namespace Smart.Parser
         public async Task<string> Parse()
         {
             manager.Options.CollectFiles();
+            var tasks = new List<Task>();
+            var semaphore = new SemaphoreSlim(10);
+
             foreach (var file in manager.Options.InputFiles)
             {
-                foreach (var plugin in manager.Plugins)
+                var plugins = manager.InstantinatePlugins();
+                foreach (var plugin in plugins)
                 {
-
-                    await plugin.Parse(file);
+                    await semaphore.WaitAsync();
+                    tasks.Add(Task.Run(async () =>
+                    {
+                        try
+                        {
+                            await plugin.Parse(file);
+                        }
+                        finally
+                        {
+                            semaphore.Release();
+                        }
+                    }));
                 }
-
             }
+
+            await Task.WhenAll(tasks);
             return null;
         }
     }

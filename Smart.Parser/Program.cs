@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
+Console.WriteLine("DEfaut working directory is used:" + Directory.GetCurrentDirectory());
 
 var services = new ServiceCollection();
 services.AddSingleton<IArgsParser, ArgsParser>((context) => ArgsParser.Instanate(args));
@@ -11,7 +12,7 @@ services.AddSingleton<IPluginOptions, PluginOptions>((context) =>
 services.AddSingleton<ISmartParserPluginManager, SmartParserPluginManager>((context) =>
 {
     var manager = new SmartParserPluginManager(context.GetRequiredService<IPluginOptions>());
-    manager.DiscoverAndRegisterPlugins();
+    manager.DiscoverPlugins();
     return manager;
 });
 services.AddSingleton<ISmartParser, SmartParser>();

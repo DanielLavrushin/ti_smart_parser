@@ -3,25 +3,22 @@
 public interface ISmartParserPluginManager
 {
     IPluginOptions Options { get; }
-    ICollection<IDocumentParser> Plugins { get; }
-    void Register(IDocumentParser parser);
-    void DiscoverAndRegisterPlugins();
+    ICollection<Type> PluginTypes { get; }
+    void DiscoverPlugins();
+    ICollection<IDocumentParser> InstantinatePlugins();
 }
 
 public class SmartParserPluginManager : ISmartParserPluginManager
 {
     public IPluginOptions Options { get; }
-    public ICollection<IDocumentParser> Plugins { get; } = new List<IDocumentParser>();
+    public ICollection<Type> PluginTypes { get; } = new List<Type>();
 
     public SmartParserPluginManager(IPluginOptions options)
     {
         Options = options;
     }
-    public void Register(IDocumentParser parser)
-    {
-        Plugins.Add(parser);
-    }
-    public void DiscoverAndRegisterPlugins()
+
+    public void DiscoverPlugins()
     {
         string pluginPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "plugins");
 
@@ -38,13 +35,21 @@ public class SmartParserPluginManager : ISmartParserPluginManager
             {
                 if (typeof(IDocumentParser).IsAssignableFrom(type) && !type.IsInterface && !type.IsAbstract)
                 {
-                    if (Activator.CreateInstance(type) is IDocumentParser parserInstance)
-                    {
-                        Register(parserInstance);
-                    }
+                    PluginTypes.Add(type);
                 }
             }
         }
     }
 
+    public ICollection<IDocumentParser> InstantinatePlugins()
+    {
+        var plugins = new List<IDocumentParser>();
+        foreach (var pluginType in PluginTypes)
+        {
+            var plugin = (IDocumentParser)Activator.CreateInstance(pluginType);
+            plugins.Add(plugin);
+        }
+
+        return plugins;
+    }
 }
